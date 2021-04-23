@@ -4,7 +4,7 @@
 # Jest Test Coverage
 #-------------------------------------------------------------
 function jest_test_coverage() {
-  unset local test_docpage test_mono test_monolith
+  unset local test_docpage test_npm_packages test_monolith
 
   local -r FUNCTION_NAME=${funcstack[1]}
   local -r REPORT_FILE="/coverage/index.html"
@@ -28,7 +28,7 @@ function jest_test_coverage() {
 
   _options () {
     echo "Run-time usage options"
-    echo "       [ -o ] : Run coverage on Mono repository"
+    echo "       [ -o ] : Run coverage on npm_packages repository"
     echo "       [ -d ] : Run coverage on Scribd repository, doc_page app"
     echo "       [ -m ] : Run coverage on Scribd repository, test_monolith app"
   }
@@ -59,7 +59,7 @@ function jest_test_coverage() {
 
   while getopts "omdh" opt; do
     case $opt in
-      o) test_mono=1 ;;
+      o) test_npm_packages=1 ;;
       d) test_docpage=1 ;;
       m) test_monolith=1 ;;
       h) _print_help
@@ -67,10 +67,10 @@ function jest_test_coverage() {
     esac
   done
 
-  if [[ -n "${test_mono}" ]]; then
+  if [[ -n "${test_npm_packages}" ]]; then
     print_header "Run coverage on Mono repository"
     # Change directory to mono app root
-    scmo
+    scnp
     yarn test:coverage; open .${REPORT_FILE}
   fi
 
