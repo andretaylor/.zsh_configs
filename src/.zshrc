@@ -44,7 +44,6 @@ function load_shell() {
   }
 
   if ( ! getopts "aesuzh" opt ); then
-
     source ${ENVIRONMENT_CONFIG} &&
     source ${SCRIBD_CONFIG} &&
     source ${UTILITIES_CONFIG} &&

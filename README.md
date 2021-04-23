@@ -19,12 +19,12 @@
 Run the following and then restart your shell.
 
 ```
-cd ~
-mv .zprofile .zprofile.bak
-mv .zshrc .zshrc.bak
-ln -s ~/.zsh_configs/src/.zprofile .zprofile
-ln -s ~/.zsh_configs/src/.zshrc .zshrc
-source ~/.zprofile
+$ cd ~
+$ mv .zprofile .zprofile.bak #mv ${CONFIG_YAML}{,.disabled}
+$ mv .zshrc .zshrc.bak #mv ${CONFIG_YAML}{,.disabled}
+$ ln -s ~/.zsh_configs/src/.zprofile .zprofile
+$ ln -s ~/.zsh_configs/src/.zshrc .zshrc
+$ source ~/.zprofile
 ```
 
 ---
