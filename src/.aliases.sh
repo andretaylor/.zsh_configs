@@ -27,29 +27,23 @@ alias lu="ll -tur"                                          # Sort by/show acces
 #-------------------------------------------------------------
 # GIT aliases
 #-------------------------------------------------------------
-# alias lgit="" # List GIT plugin aliases
+
 alias lgits="git_cl_symbols"                                 # List GIT CL symbols
 
-
-# alias gcn!="git commit --no-edit --amend"
-alias gcop="git checkout -"                                  # Checkout previous branch
 # Branch
+alias gcop="git checkout -"                                  # Checkout previous branch
 alias gbk="git_backup_current_branch"                        # Backup branch
 alias gbm="git branch --merged"                              # List branches whose tips are reachable from HEAD
 alias gbn="git_create_local_and_remote_branch"               # Create branch and push to origin
 alias ggff="git push --force-with-lease"                     # Protect all remote refs that are going to be updated
-# alias ggpu="git push"                                        # Push changes to remote
 alias gcor="git checkout -- ."                               # Remove unstaged files
 
 # Housekeeping
 alias gkbleach="git_remove_local_branches_if_not_on_remote"
-alias gkdl="git branch --delete --force"                     # Remove local branch with force
-alias gkdr="git push origin --delete"                        # Remove remote branch
+alias gkremovel="git branch --delete --force"                     # Remove local branch with force
+alias gkremover="git push origin --delete"                        # Remove remote branch
 alias gkclean="git_prune_and_clean_local_repository"
-alias gkwipe="git_delete_remote_and_local_branch"
-
-# Stash
-# alias gsta="git stash push"                                  # Push into stash
+alias gkdestroy="git_delete_remote_and_local_branch"
 
 # Status
 alias gsso="git show --stat --oneline"                       # Show status of files in HEAD or SHA

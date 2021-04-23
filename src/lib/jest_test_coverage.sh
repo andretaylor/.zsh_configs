@@ -28,8 +28,8 @@ function jest_test_coverage() {
 
   _options () {
     echo "Run-time usage options"
-    echo "       [ -o ] : Run coverage on npm_packages repository"
     echo "       [ -d ] : Run coverage on Scribd repository, doc_page app"
+    echo "       [ -n ] : Run coverage on npm_packages repository"
     echo "       [ -m ] : Run coverage on Scribd repository, test_monolith app"
   }
 
@@ -57,10 +57,10 @@ function jest_test_coverage() {
     return
   fi
 
-  while getopts "omdh" opt; do
+  while getopts "dnmh" opt; do
     case $opt in
-      o) test_npm_packages=1 ;;
       d) test_docpage=1 ;;
+      n) test_npm_packages=1 ;;
       m) test_monolith=1 ;;
       h) _print_help
          return ;;
